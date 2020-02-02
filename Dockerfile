@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM nginx
 
 # --- Python Installation ---
 RUN apt-get update -y && apt-get install -y python3 gcc python3-dev musl-dev python3-pip && \
@@ -16,6 +16,8 @@ RUN pip install -r app/requirements.pip
 
 # --- Nginx Setup ---
 COPY config/nginx/default.conf /etc/nginx/conf.d/
+RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx
+RUN chgrp -R root /var/cache/nginx
 RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
 RUN addgroup nginx root
 
