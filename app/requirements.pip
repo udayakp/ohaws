@@ -37,10 +37,8 @@ scikit-learn==0.22.1
 six==1.14.0
 sklearn==0.0
 stanfordcorenlp==3.9.1.1
-tensorboard==2.1.0
+tensorboard
 tensorflow
 tensorflow-estimator
-termcolor==1.1.0
+termcolor
 urllib3==1.25.7
-Werkzeug==0.16.0
-wrapt==1.11.2
