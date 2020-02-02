@@ -1,4 +1,4 @@
-FROM nginx:mainline-alpine
+FROM nginx
 
 # --- Python Installation ---
 RUN apk add --no-cache python3 && \
