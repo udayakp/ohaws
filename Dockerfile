@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 # --- Python Installation ---
-RUN apt-get update -y && apt-get install -y python3 gcc python3-dev musl-dev linux-headers mariadb-dev postgresql-dev && \
+RUN apt-get update -y && apt-get install -y python3 gcc python3-dev musl-dev && \
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
     pip3 install --upgrade pip setuptools && \
