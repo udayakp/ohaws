@@ -4,3 +4,4 @@ requirements.txt
 /Lib/*
 /Include/*
 pyvenv.cfg
+*.pyc
