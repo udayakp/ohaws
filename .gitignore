@@ -1,0 +1,6 @@
+r2.txt
+requirements.txt
+/Scripts/*
+/Lib/*
+/Include/*
+pyvenv.cfg
