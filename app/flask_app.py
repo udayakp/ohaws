@@ -1,15 +1,16 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request, render_template
 import aimodule
 import requests
 import json
-app = Flask(__name__)
+app = Flask(__name__,template_folder = './templates')
 
-@app.route("/")
+@app.route('/')
 def hello():
     aimodule.train()
+    #return {"message" : "Inside hello method"},200
     return render_template('chat.html')
     
-@app.route("/ask", methods=['POST'])
+@app.route('/ask', methods=['POST'])
 def ask():
     # kernel now ready for use
     while True:
@@ -27,4 +28,4 @@ def ask():
             return jsonify({'status':'OK','answer':bot_response})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0',debug="False",use_reloader="True")
