@@ -4,12 +4,12 @@ import requests
 import json
 app = Flask(__name__)
 
-@application.route("/")
+@app.route("/")
 def hello():
     aimodule.train()
     return render_template('chat.html')
     
-@application.route("/ask", methods=['POST'])
+@app.route("/ask", methods=['POST'])
 def ask():
     # kernel now ready for use
     while True:
