@@ -8,9 +8,9 @@ RUN apt-get update -y && apt-get install -y python3 gcc python3-dev musl-dev pyt
     rm -r /root/.cache
 
 # --- Work Directory ---
-WORKDIR /usr/src
-RUN chmod -R 775 /usr/src
-RUN chown -R root /usr/src
+WORKDIR /usr/src/app
+RUN chmod -R 775 /usr/src/app
+RUN chown -R root /usr/src/app
 
 # --- Python Setup ---
 ADD . .
