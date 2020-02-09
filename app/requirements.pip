@@ -6,5 +6,4 @@ json2html
 tensorflow
 pandas
 numpy
-pickle
 sklearn
