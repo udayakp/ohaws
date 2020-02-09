@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx
 
 # --- Python Installation ---
 RUN apt-get update -y && apt-get install -y python3 gcc python3-dev musl-dev python3-pip && \
