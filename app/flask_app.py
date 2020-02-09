@@ -1,5 +1,8 @@
 from flask import Flask, jsonify, request, render_template
+import logging as logger
+#logger.basicConfig(level="DEBUG")
 import aimodule
+import sentiment
 import requests
 import json
 app = Flask(__name__,template_folder = './templates')
@@ -24,8 +27,11 @@ def ask():
             aimodule.incident()
         else:
             bot_response = aimodule.respond(message)
-            # print bot_response
-            return jsonify({'status':'OK','answer':bot_response})
+            sen_response = sentiment.predict(message)
+            resp = bot_response + "---" +sen_response
+            #print sen_response
+            logger.debug(sen_response)
+            return jsonify({'status':'OK','answer':resp})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug="False",use_reloader="True")
