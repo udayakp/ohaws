@@ -4,3 +4,7 @@ aiml
 requests
 json2html
 tensorflow
+pandas
+numpy
+pickle
+sklearn
