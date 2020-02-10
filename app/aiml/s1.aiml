@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.0 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Last modified 12/02/2011 -->
+<!-- -->
+<category><pattern>S BOT</pattern>
+<template>A support bot.</template>
+</category>
+
+<category><pattern>UNABLE TO ACCESS *</pattern>
+<template>Could you please try clearing the cache and try running the report again and see if you are still facing the issue in report <set name = "Report"> <star/> .</set> </template>
+</category>
+
+<category>
+<pattern>NOT MATCHING *</pattern>
+<THAT>A support bot.</THAT>
+<template>Could you please check the document in the link and see if this resolves the issue </template>
+</category>
+
+<category>
+<pattern>_ INCORRECT *</pattern>
+<template>Please provide the report name</template>
+</category>
+
+<category>
+<pattern>YES</pattern>
+<THAT>Could you please try clearing the cache and try running the report again and see if you are still facing the issue</THAT>
+<template> Please provide your SAP ID </template>
+</category>
+
+<category>
+<pattern> * </pattern>
+<THAT>Please provide the report name</THAT>
+<template>Report: <set name = "report"> <star/></set>
+Please enter the inputs for the report <get name = "report"/>  </template>
+</category>
+
+<category>
+<pattern> * </pattern>
+<THAT>Please provide your SAP ID. </THAT>
+<template>SAP ID: <set name = "SAPID"> <star/> </set>
+Please enter the inputs for the report  </template>
+</category>
+
+<category>
+<pattern> * </pattern>
+<THAT> * Please enter the inputs for the report * </THAT>
+<template>inputs: <set name = "inputs"> <star/></set>
+Please enter the error for the report <get name = "report"/>  </template>
+</category>
+
+<category>
+<pattern> * </pattern>
+<THAT> * Please enter the error for the report * </THAT>
+<template>error: <set name = "error"> <star/></set>  </template>
+</category>
+
+
+<category>
+<pattern>UPDATE ON * </pattern>
+<template>We are looking into it and will update you soon  on <set name = "updaterequest"><star/></set>
+ </template>
+</category>
+
+<category>
+<pattern>DESCRIBE</pattern>
+<template> Report :<get name = "report"/> SAP ID :<get name = "sapid"/> Inputs :<get name = "inputs"/> Error:<get name ="error"/> </template>
+</category>
+
+
+</aiml>

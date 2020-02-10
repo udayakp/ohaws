@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+
+<category><pattern>S BOT</pattern>
+<template>yes i am support bot</template>
+</category>
+
+
+<category><pattern>UNABLE TO ACCESS *</pattern>
+<template>Could you please try clearing the cache and try running the report again and see if you are still facing the issue. <set name = "Report"> <star/> </set> </template>
+</category>
+
+<category>
+<pattern>_NOT MATCHING *</pattern>
+<template>Could you please check the document in the link and see if this resolves the issue </template>
+</category>
+
+<category>
+<pattern>_REPORTING IS INCORRECT*</pattern>
+<template>Please provide the report name</template>
+</category>
+
+<category>
+<pattern>YES</pattern>
+<that>Could you please try clearing the cache and try running the report again and see if you are still facing the issue.* </that>
+<template>Please provide your SAP ID </template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<that>Please provide your SAP ID. </that>
+<template>SAP ID: <set name = "SAPID"> <star/> </set>
+Please enter the inputs for the report  </template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<that>*Please enter the inputs for the report*</that>
+<template>inputs: <set name = "inputs"> <star/></set>
+Please enter the inputs for the report <get name = "report"/>  </template>
+</category>
+
+
+<category>
+<pattern>*</pattern>
+<that>Please provide the report name</that>
+<template>Report: <set name = "report"> <star/></set>
+Please enter the inputs for the report <get name = "report"/>  </template>
+</category>
+
+
+<category>
+<pattern>*</pattern>
+<that>*Please enter the inputs for the report *</that>
+<template>inputs: <set name = "inputs"> <star/></set>
+Please enter the inputs for the report <get name = "report"/>  </template>
+</category>
+
+
+<category>
+<pattern>UPDATE ON *</pattern>
+<template>We are looking into it and will update you soon <set name = "updaterequest"><star/></set>
+ </template>
+</category>
+
+<category>
+<pattern>DESCRIBE</pattern>
+<template>Report :<get name = "report"> SAP ID :<get name = "sapid"> Inputs :<get name = "inputs"> </template>
+</category>
+
+</aiml>
